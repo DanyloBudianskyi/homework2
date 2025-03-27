@@ -4,12 +4,18 @@ const ItemFunc = (props) => {
     const changeBg = () => {
         setBg(!isActive)
     }
-
+    const styles = {
+        backgroundColor: isActive ? "red" : "green", 
+        width: 70, 
+        height: 40, 
+        color:"white",
+        border: "none"
+    }
     return(
         <div>
             <h2>Item name: {props.name}, price: {props.price}</h2>
             <img src={props.imgSrc}/>
-            <button onClick={changeBg} style={{backgroundColor: isActive ? "red" : "green", width: 70, height: 40, color:"white"}}>{isActive ? "Not active" : "Active"}</button>
+            <button onClick={changeBg} style={styles}>{isActive ? "Not active" : "Active"}</button>
         </div>
     )
 }
